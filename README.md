@@ -36,6 +36,7 @@ Remember, the recipe for Ajaxifying any action is:
  1. Add support for `format.js` to the responder block of the action that you want to Ajaxify (if the scaffold didn't already give you a `respond_to` call, then add one).
  1. Create a .js.erb view template for the action.
  1. Write some jQuery in the view template to update the DOM.
+ 1. While Ajaxifying, it is often very helpful to create partials, if you didn't have them before, so that you don't have to write a bunch of HTML within JavaScript strings. Also, don't forget the `escape_javascript` (alias `j`) helper method that will remove characters from Ruby strings that are illegal in JavaScript strings.
 
 ## Good luck!
 
