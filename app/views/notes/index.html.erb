@@ -2,9 +2,20 @@
   <h1>Listing Notes</h1>
 </div>
 
-  <%= render 'inline_form', note: Note.new %>
-<ul class="list-group">
-  <%= render @notes %>
-</ul>
+<div class="row">
+  <div class="col-md-12">
+    <%= render 'inline_form', note: Note.new %>
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <%= render @notes %>
+    </ul>
+  </div>
+</div>
 
 <%= subscribe_to "/messages/new" %>
