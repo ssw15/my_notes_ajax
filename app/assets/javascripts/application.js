@@ -12,7 +12,26 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require turbolinks
 //= require private_pub
 //= require_tree .
+
+// Write jQuery to make notes draggable
+//  - Use the 'clone' helper, so the original stays in place
+
+$(function() {
+  $('.note').draggable({
+    helper: 'clone'
+  });
+});
+
+
+
+
+
+
+
+
+
 
