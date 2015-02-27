@@ -24,6 +24,21 @@ $(function() {
   $('.note').draggable({
     helper: 'clone'
   });
+
+  // Step 1: Make the trash area pop up an alert when something is dropped on it
+
+  $('#trash').droppable({
+    drop: function(event, ui) {
+      // alert(ui.draggable.data('note-id'));
+      $.ajax({
+        url: '/notes/' + ui.draggable.data('note-id'),
+        type: 'DELETE',
+        dataType: 'script'
+      })
+    }
+  });
+
+  // Step 2: Make the alert contain the ID number of the item that was dropped
 });
 
 
