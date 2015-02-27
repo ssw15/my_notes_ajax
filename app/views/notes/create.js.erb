@@ -1,9 +1,13 @@
-var new_note = $('<%= j(render @note) %>');
+<% publish_to "/messages/new" do %>
 
-new_note.hide();
+  var new_note = $('<%= j(render @note) %>');
 
-$('ul').prepend(new_note);
+  new_note.hide();
 
-new_note.fadeIn();
+  $('ul').prepend(new_note);
 
-$('#note_content').val('');
+  new_note.fadeIn();
+
+  $('#note_content').val('');
+
+<% end %>
