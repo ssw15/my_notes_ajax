@@ -1,0 +1,9 @@
+var new_note = $('<%= j(render @note) %>');
+
+new_note.hide();
+
+$('tbody').prepend(new_note);
+
+new_note.fadeIn();
+
+$('#note_content').val('');

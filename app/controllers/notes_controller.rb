@@ -19,6 +19,10 @@ class NotesController < ApplicationController
 
   # GET /notes/1/edit
   def edit
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   # POST /notes
@@ -28,6 +32,7 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       if @note.save
+        format.js
         format.html { redirect_to :back, notice: 'Note was successfully created.' }
         format.json { render :show, status: :created, location: @note }
       else
@@ -42,6 +47,7 @@ class NotesController < ApplicationController
   def update
     respond_to do |format|
       if @note.update(note_params)
+        format.js
         format.html { redirect_to :back, notice: 'Note was successfully updated.' }
         format.json { render :show, status: :ok, location: @note }
       else
@@ -56,6 +62,7 @@ class NotesController < ApplicationController
   def destroy
     @note.destroy
     respond_to do |format|
+      format.js
       format.html { redirect_to :back, notice: 'Note was successfully destroyed.' }
       format.json { head :no_content }
     end

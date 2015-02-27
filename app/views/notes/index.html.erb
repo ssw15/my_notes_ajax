@@ -2,9 +2,7 @@
 
 <h1>Listing Notes</h1>
 
-<%= form_for Note.new do |f| %>
-  <%= f.text_field :content, placeholder: "Enter note" %>
-<% end %>
+<%= render 'inline_form', note: Note.new %>
 
 <table>
   <thead>
@@ -15,14 +13,7 @@
   </thead>
 
   <tbody>
-    <% @notes.each do |note| %>
-      <tr>
-        <td><%= note.content %></td>
-        <td><%= link_to 'Show', note %></td>
-        <td><%= link_to 'Edit', edit_note_path(note) %></td>
-        <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render @notes %>
   </tbody>
 </table>
 
