@@ -1,1 +1,1 @@
-$('#<%= dom_id @note %>').replaceWith('<%= j(render @note) %>');
+$('#<%= dom_id @note %>').html('<%= j(render 'note_content', note: @note) %>');
