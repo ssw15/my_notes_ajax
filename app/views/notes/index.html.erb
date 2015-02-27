@@ -3,6 +3,12 @@
 </div>
 
 <div class="row">
+  <div class="col-md-offset-9 col-md-3 well">
+    Trash
+  </div>
+</div>
+
+<div class="row">
   <div class="col-md-12">
     <%= render 'inline_form', note: Note.new %>
   </div>
@@ -12,7 +18,7 @@
 
 <div class="row">
   <div class="col-md-12">
-    <ul class="list-group">
+    <ul id="notes_list" class="list-group">
       <%= render @notes %>
     </ul>
   </div>
