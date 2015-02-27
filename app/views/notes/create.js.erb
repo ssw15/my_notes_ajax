@@ -1,4 +1,4 @@
-<% publish_to "/messages/new" do %>
+<% publish_to "/notes" do %>
 
   var new_note = $('<%= j(render @note) %>');
 
@@ -8,6 +8,6 @@
 
   new_note.fadeIn();
 
-  $('#note_content').val('');
-
 <% end %>
+
+$('#note_content').val('');

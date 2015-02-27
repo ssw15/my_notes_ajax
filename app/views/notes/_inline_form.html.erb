@@ -1,8 +1,10 @@
-<%= form_for note, remote: true do |f| %>
-<div class="input-group">
-  <%= f.text_field :content, placeholder: "Enter note", class: "form-control" %>
-  <span class="input-group-btn">
-    <%= f.submit class: "btn btn-success" %>
-  </span>
-</div><!-- /input-group -->
-<% end %>
+<div class="giraffe">
+  <%= form_for note, remote: true do |f| %>
+  <div class="input-group">
+    <%= f.text_field :content, placeholder: "Enter note", class: "form-control" %>
+    <span class="input-group-btn">
+      <%= f.submit class: "btn btn-success" %>
+    </span>
+  </div><!-- /input-group -->
+  <% end %>
+</div>

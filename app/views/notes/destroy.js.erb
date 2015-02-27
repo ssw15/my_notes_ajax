@@ -1,1 +1,3 @@
-$('#<%= dom_id @note %>').fadeOut();
+<% publish_to "/notes" do %>
+  $('#<%= dom_id @note %>').fadeOut();
+<% end %>

@@ -1,1 +1,7 @@
-$('#<%= dom_id @note %>').html('<%= j(render 'note_content', note: @note) %>');
+<% publish_to "/notes" do %>
+
+  $('#<%= dom_id @note %> .zebra').replaceWith('<%= j(render 'note_content', note: @note) %>');
+
+<% end %>
+
+$('#<%= dom_id @note %> .giraffe').replaceWith('<%= j(render 'note_content', note: @note) %>');
